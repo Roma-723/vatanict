@@ -1,0 +1,27 @@
+/* Эффекти ҷудошавӣ (Border) ҳангоми пахш кардан ба корти статсистикӣ
+.stat-card {
+    border: 2px solid transparent; /* Дар ҳолати муқаррарӣ ноаён */
+    /* border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.stat-card-pressed {
+    border-color: rgba(34, 153, 74, 1) !important; /* Ранги сабзи асосӣ */
+    /*  Сояи мулоим */
+/* } */
+
+/* Стил барои Swiper */
+/* .stats-swiper {
+    padding-bottom: 40px; /* Ҷой барои пагинатсия */
+/* } */
+
+/* .swiper-pagination-custom .swiper-pagination-bullet {
+    background: rgba(73, 73, 73, 0.5);
+    opacity: 1;
+} */
+
+/* .swiper-pagination-custom .swiper-pagination-bullet-active {
+    background: rgba(34, 153, 74, 1); Ранги фаъоли сабз
+}  */ */

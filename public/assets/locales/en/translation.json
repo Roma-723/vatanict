@@ -1,0 +1,291 @@
+{
+  "language": "en",
+  "layout": {
+    "layoutHeader": {
+      "text1": "About company",
+      "text2": "Projects",
+      "text3": "Services",
+      "text4": "Solutions",
+      "text5": "Career",
+      "text6": "News",
+      "text7": "Contacts"
+    },
+    "layoutFooter": {
+      "text1": "ITN",
+      "text2": "Registration certificate"
+    }
+  },
+  "mainPage": {
+    "mainPageSection1": {
+      "title1": "WE DEVELOP",
+      "title2": "DIGITAL",
+      "title3": "SOLUTIONS",
+      "title4": "",
+      "text1": "Digital platform development company",
+      "text2": "OOO ”Vatan ICT”",
+      "button": "Order development"
+    },
+    "mainPageSection3": {
+      "text1": "Years the company has been on the market",
+      "text2": "Year was a special milestone in the development of the company ",
+      "text3": "Large scale projects have been launched",
+      "text4": "Solutions  our company offers for customers."
+    },
+    "mainPageSection5": {
+      "title": "Partners"
+    }
+  },
+  "aboutCompany": {
+    "aboutCompanySection1": {
+      "title": "in numbers.",
+      "text": "Based on its mission of \"Digital technologies in the service of society\" and on the deep knowledge of its employees, the company currently continues to develop its own business products and implement projects for the digitalization of processes for its customers.",
+      "text1": "years in the market",
+      "text2": "employees in headquarters  ",
+      "text3": "milestone in development",
+      "text4": "technologies are used",
+      "text5": "partners",
+      "text6": "major projects"
+    },
+    "aboutCompanySection2": {
+      "title1": "Foundation of the company",
+      "text1_1": "VATAN ICT was founded in 2014. During the same year, they managed to launch the first product of the company - Behatar.info, which made it possible for the company to gain a foothold in the IT market as an independent player and the following year released another eRuznoma application - an electronic diary for students.",
+      "text1_2": "The year 2020 was a special milestone in the development of the company. That year, the company, together with partners, launched the implementation of an electronic system for registering crimes. It also, launched the process of developing the digital platform \"eDonish\" - an educational process management system in partnership with the State Unitary Enterprise \"SmartCity\".",
+      "title2": "VATAN ICT today",
+      "text2_1": "The company has a high level of expertise and extensive experience in software development and digital platforms.",
+      "text2_2": "Currently, the company employs specialists in the field of software architecture design, UX / UI designers, business analysts, database administrators, DevOps specialists, Frontend developers, Backend developers, mobile application developers and IT consultants who are ready to solve the most complex technical problems and transfer routine business processes to automated digital platforms.",
+      "title3": "Social responsibility.",
+      "text3_1": "The company is aware of the importance of its role in the development of society and adheres to the concept of developing socially significant projects - directly or indirectly simplifying access to digital platforms for all segments of the population. Vatan ICT trains and provides remote work for people with disabilities",
+      "text3_2": "The company adheres to the policy of increasing the role of women in the technology and management sectors. When digitalizing projects, we strive to reduce the use of paper, which leads to a lower carbon footprint."
+    },
+    "aboutCompanySection3": {
+      "title": "Technologies and platforms.",
+      "text1": "Frontend and Mobile Development",
+      "text2": "Backend and Microservices",
+      "text3": "DATA AND PROCESSING"
+    },
+    "aboutCompanySection4": {
+      "title1": "Cooperation",
+      "title2": "and partnership",
+      "description": "In today's global world, it is impossible to do business and develop technologies alone, without participating in cooperation or in cooperation with other partners. The company highly values ​​and cherishes with its business and technology partners."
+    },
+    "aboutCompanySection5": {
+      "subtitle": "Documents",
+      "title": "Certificates and letters",
+      "description": "Documents and recommendation letters from organizations confirming our experience and collaboration.",
+      "badgeSubtitle": "Official letters",
+      "viewBtn": "View",
+      "docType": "Recommendation letter",
+      "docs": {
+        "mvd": "MIA",
+        "mm": "Majlisi Milli",
+        "seforworld": "Seforworld",
+        "smartcity": "Smart City"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Our solutions",
+    "more": "More",
+    "hide": "Hide",
+    "card1": {
+      "title": "Management system for schools",
+      "text": "The management system developed by the company for educational institutions is a complex application - an electronic journal, an electronic diary, a module for statistics and analytics of the educational process, scheduling lessons, monitoring class attendance, access to digital educational content, and managing the personnel of an educational institution. User interfaces are available in WEB and APP versions for Android and IOS."
+    },
+    "card2": {
+      "title": "Automation of work processes",
+      "text": "Specialized software modules, such as business process automation, form designer, digital signature for documents, service web portal designer, cashless payment automation allow organizations to implement electronic document management with minimal resources. In cases where an organization has existing EDMS, by purchasing modules separately, they will be able to supplement their EDMS system with new functionality."
+    },
+    "card3": {
+      "title": "AI recognition systems",
+      "text": "Together with partners, the company has developed a recognition and alert system based on artificial intelligence technology. By implementing this solution, organizations can enhance access control, responsiveness, and security. For existing access control systems, this solution has an API-based integration module and can add new functions to existing systems."
+    },
+    "card4": {
+      "title": "Data backup automation",
+      "text": "Data backup and archiving automation system enables small organizations to automate the process of backing up and archiving their important and significant digital data using their own encryption key. The system works on a subscription basis and provides customers with a convenient and intuitive interface for managing backup copies of their data."
+    },
+    "card5": {
+      "title": "IP Contact Center and CRM",
+      "text": "Partner solution IP Contact Center, supplemented by the CRM system developed by the company, enables potential customers to quickly organize a customer support service through various communication channels (telephony, instant messengers, email, web). This solution is suitable for both government organizations and commercial structures of any size."
+    },
+    "card6": {
+      "title": "Medical Institution Management System",
+      "text": "The system covers core clinic processes: appointment scheduling, electronic medical records, patient and service accounting, internal document flow, and management reporting. It supports staged implementation and integration with laboratory and payment services."
+    }
+  },
+  "project": {
+    "title": "Projects",
+    "text1": "All",
+    "text2": "Public sector",
+    "text3": "Business",
+    "text4": "Education",
+    "year": "Year",
+    "customerText": "Customer",
+    "category": "Customer",
+    "card1": {
+      "title": "Electronic system for registration of applications for the MIA RT",
+      "text1": "The purpose of the electronic crime registration system is to ensure the right of citizens to access justice, to ensure and protect the rights and legitimate interests of citizens or legally protected public or state interests when submitting requests and reports on crimes. Including:",
+      "text2": "- Development of partnership relations between the police and the population as a key element in the activities of law enforcement agencies, strengthening interaction and cooperation between the police, other government agencies and the public in registering complaints and or reports on crimes",
+      "text3": "Strengthening the capacity of law enforcement agencies, improving law enforcement measures in the field of crime;",
+      "text4": "- Development and maintenance of effective criminal justice reporting systems that provide state and public control in this area, including online;",
+      "text5": "- Improving the capacity for intradepartmental and interdepartmental information exchange, ensuring transparency in the process of receiving applications and making decisions.",
+      "text6": "",
+      "customer": "MIA RT"
+    },
+    "card2": {
+      "title": "eDonish is a digital education platform in Dushanbe.",
+      "text1": "eDonish platform - an electronic educational process management system. The platform connects all participants in the educational process: school staff, teachers, students and parents. Available in WEB and APP versions for IOS and Android. In total, there are 12 roles in the platform, each of which has its own level of access to information. Thanks to the well-coordinated work of all platform participants, parents receive complete information about the progress, attendance, schedule and homework of their child.",
+      "text2": "The eDonish platform covers 106 secondary schoos in the city of Dushanbe.",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": "SUE \"Smart City\"."
+    },
+    "card3": {
+      "title": "Project for the development of an information and analytical system of the Ministry of Internal Affairs of the Republic of Tajikistan",
+      "text1": "System for collection and monitoring of criminal incidents. Also, the system is designed to collect statistical data and analyze data related to the sphere of public security in the Republic of Tajikistan.",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": "MIA RT"
+    },
+    "card4": {
+      "title": "Analytical database project for the Organized Crime Control Department of the Ministry of Internal Affairs of the Republic of Tajikistan",
+      "text1": "Automated analytics system for the OCCD MIA RT - provides automation of internal workflow and information retrieval for employees of the OCCD MIA RT.",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": "UBOP MIA RT."
+    },
+    "card5": {
+      "title": "Voting system for Majlisi Milli RT",
+      "text1": "Vatan ICT company has implemented a voting system in the hall of the Majlisi Milli of the Republic of Tajikistan.",
+      "text2": "System of voting and displaying the results of voting in the meeting hall of the Majlisi Milli of the Republic of Tajikistan.",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": "Majlisi Milli RT."
+    },
+    "card6": {
+      "title": "eDonish market ",
+      "text1": "Marketplace for the purchase of school supplies from the category: books, stationery, school uniforms and equipment.",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": ""
+    },
+    "card7": {
+      "title": "Analytics and reporting system for the Department of Education and Science of Dushanbe",
+      "text1": "The system is intended for the role of a curator within the eDonish program in order to supervise and analyze reports, timely filling in information about progress, attendance and schedule in secondary schools.",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": "SUE \"Smart City\""
+    },
+    "card8": {
+      "title": "The system of electronic registration of applicants for the National Testing Center under the President of the Republic of Tajikistan",
+      "text1": "The main tasks and activities of the NTC are the organization and conduct of centralized entrance examinations to educational institutions of secondary and higher professional education of the Republic of Tajikistan. In this regard, one of the first directions of the СEE system is the registration of applicants for participation in the exams.",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "customer": "NATIONAL TESTING CENTER UNDER THE PRESIDENT OF THE REPUBLIC OF TAJIKISTAN"
+    },
+    "card9": {
+      "title": "Project for the Police College of the Ministry of Internal Affairs of the Republic of Tajikistan",
+      "text1": "The platform platform.kvkd.tj is a digital system for managing the educational process of the Police College of the Ministry of Internal Affairs of the Republic of Tajikistan, developed and implemented by Vatan ICT.",
+      "text2": "The platform provides centralized cadet records, monitoring of academic performance and attendance, as well as secure role-based access to data. The system operates in Kulob, as the college is located in the city of Kulob.",
+      "text3": "The system is available as a WEB version and implements a multi-level role-based model, including the following roles: college administration, teachers, responsible staff, and cadets. Each role has strictly defined access rights, ensuring a high level of data security and confidentiality.",
+      "text4": "As part of the project, a Face ID system was implemented at the college entrance, automatically recording the entry and exit of cadets. Access information is transmitted to the system in real time and sends notifications to the kvkd mobile application for parents.",
+      "text5": "Additionally, a kvkd mobile application was developed for parents of cadets, allowing them to receive up-to-date information on attendance, presence status, and the educational process.",
+      "text6": "The platform platform.kvkd.tj ensures transparency, control, and efficient management of the educational process, reduces paperwork, and increases the effectiveness of managerial decision-making at the college.",
+      "customer": "Police College of the Ministry of Internal Affairs of the Republic of Tajikistan"
+    },
+    "card10": {
+      "title": "Agency for Supervision in the Field of Education and Science under the President of the Republic of Tajikistan",
+      "text1": "An electronic information system for monitoring and managing processes in the field of education, developed and implemented by Vatan ICT for the Agency for Supervision in the Field of Education and Science under the President of the Republic of Tajikistan.",
+      "text2": "The system is designed for centralized collection, processing, and analysis of data from educational institutions and brings together agency staff, responsible specialists, and administrators within a single digital environment.",
+      "text3": "Within the framework of the project, the following processes were automated:\n • centralized registration of educational institutions\n • collection and verification of data from schools and colleges\n • automatic generation of reports\n • analytics and statistical analysis of education indicators\n • monitoring the quality of education by regions and institutions",
+      "text4": "The implementation of the platform made it possible to abandon fragmented reporting and manual data processing, increase transparency of control, and provide agency management with up-to-date analytics for informed decision-making.",
+      "text5": "",
+      "text6": "",
+      "customer": "Agency for Supervision in the Field of Education and Science under the President of the Republic of Tajikistan"
+    }
+  },
+  "servise": {
+    "title": "Services",
+    "card1": {
+      "title": "IT Consulting",
+      "text1": "Modern business cannot function separately from its information assets or without the use of information technology. At a certain stage in the development of a company, there is a need to revise work processes, optimize, automate and apply digital technologies more widely.",
+      "text2": "VATAN ICT provides a wide range of IT consulting services - from business process optimization to information asset valuation."
+    },
+    "card2": {
+      "title": "Design",
+      "text1": "The design of the user interface is on the same level in importance as the technical functionality of the application and together determine the degree of success of the product in the market. In a highly competitive environment, successful design is one of the keys to retaining users.",
+      "text2": "Over the years, VATAN ICT has accumulated extensive experience in creating intuitive user interface design and offers professional user interface design services, both as part of complex projects and individually at the request of customers."
+    },
+    "card3": {
+      "title": "Projection",
+      "text1": "An important part in the implementation of any IT system is design - technical analysis, business analysis, preparation of functional requirements, architecture, approval of technical specifications.",
+      "text2": "VATAN ICT has extensive experience in the design of information systems of varying degrees of complexity and offers services for the design of information systems and the transition to digitalization of organization services."
+    },
+    "card4": {
+      "title": "Development",
+      "text1": "Competent and timely implementation of the technical functionality of an application or more complex information systems ultimately allows organizations to reduce the cost of their maintenance and updates.",
+      "text2": "Vatan ICT, having expertise in the development of digital platforms, offers its services to interested customers, which will reduce development time and quickly launch digital services using the developed application."
+    },
+    "card5": {
+      "title": "Fusion",
+      "text1": "In a global technology ecosystem, an application cannot function in isolation from other application systems. For the full and effective operation of the application, integration with external or internal information systems is necessary.",
+      "text2": "VATAN ICT practice allows the company to provide services for integrating the application with any cloud platforms or internal information systems of the organization."
+    }
+  },
+  "career": {
+    "title": "Career",
+    "text5": "Probation period",
+    "text6": "Training",
+    "card5": {
+      "title1": "Contact us",
+      "title2": "",
+      "text": "You have studied as an IT specialist, but you do not have enough practice and experience? Do not worry! We provide an opportunity to complete an internship and work in a team with leading developers on interesting projects."
+    },
+    "card6": {
+      "title1": "Contact us",
+      "title2": "",
+      "text": "Do you dream of realizing your talent in IT and don't know where to start? VATAN ICT, together with Ilmkhona partner, are ready to select the right course for you and direct you to the required area of ​​IT."
+    }
+  },
+  "contact": {
+    "title1": "",
+    "title2": "",
+    "description": "",
+    "name": "Name",
+    "phoneNumber": "Phone number",
+    "email": "E-mail*",
+    "company": "Company",
+    "message": "Massage",
+    "send": "SEND",
+    "success": "Your message has been sent successfully!",
+    "error": "Failed to send message. Please try again.",
+    "address1": "Tajikistan, Dushanbe city,",
+    "address2": "Mirzo Tursunzoda street, 27A",
+    "successTitle": "Successfully Sent!",
+    "successSubtitle": "Thank you for your application. We will contact you shortly.",
+    "close": "Great"
+  },
+  "error404": {
+    "error": "ERROR",
+    "text1": "Page not found",
+    "text2": "HOME"
+  }
+}

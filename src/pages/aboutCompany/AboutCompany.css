@@ -1,0 +1,29 @@
+.bgAboutCompany1{
+  background-image: url(../../images/circle\ 2.png);
+  /* // background-size:cover; */
+  /* // background-position: bottom; */
+  background-repeat: no-repeat;
+}
+.bgAboutCompany2{
+  background-image: url(../../images/circle\ 1.png);
+  /* // background-size:cover; */
+  /* // background-position: bottom; */
+  background-repeat: no-repeat;
+}
+.react-pdf__Page__textContent, .react-pdf__Page__annotations{
+  display: none
+}
+.pc_document_pdf{
+  display: inline-block;
+}
+.mobile_document_pdf{
+  display: none;
+}
+@media (max-width:900px) {
+  .pc_document_pdf{
+    display: none;
+  }
+  .mobile_document_pdf{
+    display: inline-block
+  }
+}

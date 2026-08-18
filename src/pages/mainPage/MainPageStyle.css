@@ -1,0 +1,175 @@
+.bgMainPage{
+  background-image: url(../../images/tg_image_4237473623\ 1.png);
+  background-size:cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+/* .bgMainPage3{
+}
+@media  {
+  
+} */
+.card_icon_hover{
+  opacity: 0;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  -o-transition: opacity 200ms linear;
+  -ms-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
+}
+.card_hover{
+}
+.card_hover:hover .card_icon_hover{
+  opacity: 1;
+  -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+}
+/* /// project buttons hover */
+.button_project{
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  -o-transition: opacity 200ms linear;
+  -ms-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
+}
+.button_project_image{
+  opacity: 0;
+  background: linear-gradient(137.19deg, #2F9E56 24.05%, #0F682E 107.51%);
+  -webkit-transition: opacity 200ms linear;
+ -moz-transition: opacity 200ms linear;
+ -o-transition: opacity 200ms linear;
+ -ms-transition: opacity 200ms linear;
+ transition: opacity 200ms linear;
+}
+.button_project_image2{
+  opacity: 1;
+  -webkit-transition: opacity 200ms linear;
+ -moz-transition: opacity 200ms linear;
+ -o-transition: opacity 200ms linear;
+ -ms-transition: opacity 200ms linear;
+ transition: opacity 200ms linear;
+}
+.button_project:hover .button_project_image{
+  opacity: 1;
+    -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+   color: white;
+}
+.button_project:hover .button_project_image2{
+  opacity: 0;
+    -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+}
+/* // swiper pagination bullet  */
+.swiperMainPagination .swiper-pagination-bullet-active{
+  background-color: #209346 !important;
+}
+.swiperMainPagination .swiper-pagination-bullet{
+  background-color: #D9D9D9;
+  opacity: 1 !important;
+  width: 16px;
+  height: 16px;
+}
+.swiperMainPagination .swiper-pagination{
+  bottom: 0px;
+  margin-top: 52px;
+}
+@media (max-width:900px) {
+  .swiperMainPagination .swiper-pagination{
+      display: none;
+  }
+}
+/* // swiper pagination bullet 2 */
+.swiperMainPagination2 .swiper-pagination-bullet-active{
+  background-color: #209346 !important;
+}
+.swiperMainPagination2 .swiper-pagination-bullet{
+  background-color: #D9D9D9;
+  opacity: 1 !important;
+  width: 16px;
+  height: 16px;
+}
+.swiperMainPagination2 .swiper-pagination{
+  bottom: 0px;
+  margin-top: 52px;
+}
+@media (max-width:900px) {
+  .swiperMainPagination2 .swiper-pagination{
+      display: none;
+  }
+}
+/* Button on main page section 1 */
+.button_container{
+  display: inline-block;
+  width: 410px;
+  height: 99.98px;
+  /* border:1px solid black; */
+  /* height: 410px; */
+  overflow: hidden;
+
+}
+.button_div{
+  background: linear-gradient(306.38deg, #0B6329 15.8%, #32A55C 100.28%);
+  display: grid;
+  transition: 0.5s;
+  width: 410px;
+  height: 410px;
+  justify-content: center;
+  align-content: center;
+  /* margin-top: -123px; */
+  margin-top: -156px;
+  background-size: 100%;
+}
+.button_div:hover{
+  transform: rotate(74.74deg);
+  background: linear-gradient(306.38deg, #0B6329 36.95%, #32A55C 79.87%);
+  background-size: 94.5%;
+}
+.buttonMainPage{
+  width: 410px;
+  transition: all 0.5s;
+  /* border: 1px solid white; */
+}
+.button_div:hover .buttonMainPage{
+  transform: rotate(-74.74deg);
+}
+@media (max-width:899.5px) {
+  .button_container{
+    width: 196px;
+    height: 48px;
+    overflow: hidden;
+  }
+  .button_div{
+    width:201px;
+    height: 201px;
+    margin-top: -76px;
+    margin-left: -2.5px;
+  }
+  .buttonMainPage{
+    /* background: white; */
+  }
+}
+
+
+ /* .aboutCardAnimation{
+      animation: show-aboutcard 2s forwards;
+ }
+ @keyframes show-hover{
+     0%{
+     }
+     50%{
+         padding: 10px 0px;
+         filter: hue-rotate(74.74deg);
+     }
+     100%{
+     }
+   } */
