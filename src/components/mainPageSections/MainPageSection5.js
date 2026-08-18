@@ -1,79 +1,85 @@
-import React from 'react' 
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, FreeMode, Pagination } from 'swiper'
+
 import hikvision_logo from '../../images/hikvision_logo.png'
 import logo_dark from '../../images/logo-dark.png'
 import logo_color from '../../images/logo_color_1x.png'
 import logo_cassway from '../../images/Group (1).png'
 import logo_dushnbe from '../../images/logo-smart-city 1.png'
 
-import { Swiper, SwiperSlide} from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { useTranslation } from 'react-i18next'
-
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 function MainPageSection5() {
-    const {t} = useTranslation()
-  return (
-    <div className='w-full bg-[rgba(242,242,242,1)] min-h-[300px] mdMUI:pt-[150px] pt-[72px]'>
-        <div className=' mx-auto max-w-[2100px]'>
-            <div className='w-full text-center mdMUI:text-[48px] text-[24px] leading-[58.5px] font-[600] mdMUI:pb-[56px]'>
-                <h1 className='text-[rgba(73,73,73,1)]'>{t('mainPage.mainPageSection5.title')}</h1>
+    const { t } = useTranslation()
+
+    const partnerLogos = [
+        { id: 1, src: hikvision_logo, alt: 'Hikvision' },
+        { id: 2, src: logo_dark, alt: 'Partner' },
+        { id: 3, src: logo_color, alt: 'Partner' },
+        { id: 4, src: logo_cassway, alt: 'Cassway' },
+        { id: 5, src: logo_dushnbe, alt: 'Smart City Dushanbe' },
+        { id: 6, src: hikvision_logo, alt: 'Hikvision' },
+        { id: 7, src: logo_dark, alt: 'Partner' },
+        { id: 8, src: logo_color, alt: 'Partner' },
+    ]
+
+    return (
+        <section className="w-full bg-[#F4F6F5] dark:bg-[#0D120F] py-16 lg:py-24 transition-colors duration-300 overflow-hidden">
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+                
+                {/* Title Section */}
+                <div className="text-center mb-12 lg:mb-16">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#191C1A] dark:text-white tracking-tight">
+                        {t('mainPage.mainPageSection5.title')}
+                    </h2>
+                    <div className="w-12 h-1 bg-[#22994A] rounded-full mx-auto mt-4" />
+                </div>
+
+                {/* Swiper Carousel */}
+                <div className="w-full">
+                    <Swiper
+                        loop={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        freeMode={true}
+                        grabCursor={true}
+                        spaceBetween={20}
+                        breakpoints={{
+                            1280: { slidesPerView: 5, spaceBetween: 24 },
+                            1024: { slidesPerView: 4, spaceBetween: 20 },
+                            640: { slidesPerView: 3, spaceBetween: 16 },
+                            0: { slidesPerView: 2, spaceBetween: 12 },
+                        }}
+                        modules={[Pagination, FreeMode, Autoplay]}
+                        className="w-full pb-12 mySwiper"
+                    >
+                        {partnerLogos.map((logo) => (
+                            <SwiperSlide key={logo.id} className="h-auto">
+                                {/* Card Background White */}
+                                <div className="group relative w-full h-[120px] sm:h-[140px] rounded-2xl bg-white p-6 flex items-center justify-center border border-[#22994A]/25 dark:border-[#22994A]/40 hover:border-[#22994A] dark:hover:border-[#22994A] shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(34,153,74,0.2)] transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                                    
+                                    {/* Top Line Accent */}
+                                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#22994A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
+
+                                    <img
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
             </div>
-            <div className='smMUI:block hidden w-full pb-[129px]'>
-                <Swiper 
-                // slidesPerView={5.3}
-                freeMode={true}
-                spaceBetween={35}
-                pagination={{
-                    clickable:true
-                }}
-                grabCursor
-                touchRatio={1}
-                // slidesPerGroup={3}
-                breakpoints={{
-                    1300:{
-                        slidesPerView: 5.5,
-                        slidesPerGroup: 4,
-                    },
-                    980:{
-                        slidesPerView: 5,
-                        slidesPerGroup: 3,
-                    },
-                    600:{
-                        slidesPerView: 4.8,
-                        slidesPerGroup: 3,
-                    },
-                    0:{
-                        slidesPerView: 4.5,
-                        slidesPerGroup: 3,
-                    },
-                }}
-                modules={[Pagination,FreeMode]}
-                className='w-full mdMUI:h-[200px] h-[150px] mySwiper swiperMainPagination2'>
-                    <SwiperSlide className='ml-[35px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={hikvision_logo}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_dark}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_color}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_cassway}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_dushnbe}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={hikvision_logo}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_dark}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_color}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_cassway}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'><div className='flex items-center h-full justify-center mdMUI:pb-[50px] pb-[20px] mdMUI:max-w-[180px] smMUI:max-w-[80px] max-w-[50px] w-full'><img width='auto' height='100%' src={logo_dushnbe}/></div></SwiperSlide>
-                    <SwiperSlide className='ml-[5px] flex items-center'></SwiperSlide>
-                </Swiper>
-            </div>
-            <div className='smMUI:hidden flex flex-col justify-center'>
-                <div className='flex items-center justify-center w-full h-full mb-[56px]'><img width='auto' height='100%' src={hikvision_logo}/></div>
-                <div className='flex items-center justify-center w-full h-full mb-[56px]'><img width='auto' height='100%' src={logo_dark}/></div>
-                <div className='flex items-center justify-center w-full h-full mb-[56px]'><img width='auto' height='100%' src={logo_color}/></div>
-                <div className='flex items-center justify-center w-full h-full mb-[56px]'><img width='auto' height='100%' src={logo_cassway}/></div>
-                <div className='flex items-center justify-center w-full h-full mb-[56px]'><img width='auto' height='100%' src={logo_dushnbe}/></div>
-            </div>
-        </div>
-    </div>
-  )
+        </section>
+    )
 }
 
 export default MainPageSection5

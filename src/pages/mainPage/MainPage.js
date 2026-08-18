@@ -34,7 +34,7 @@ if(!imageLoading){
         <MainPageSection1/>
         <MainPageSection2/>
         <MainPageSection3/>
-        <MainPageSection4/>
+        {/* <MainPageSection4/> */}
         <MainPageSection5/>
     </div>
   )
