@@ -12,18 +12,17 @@ function MainPageSection1() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative min-h-[85vh] w-full overflow-hidden bg-gray-50 via-white to-gray-100 text-gray-900 dark:bg-[#0A0F0D] dark:text-white pt-28 pb-16 lg:py-24 transition-colors duration-300">
-      
-      {/* Background Mesh Gradients */}
+<section className="relative w-full overflow-hidden bg-gray-50 via-white to-gray-100 text-gray-900 dark:bg-[#0A0F0D] dark:text-white pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 transition-colors duration-300">      
+      {/* Dynamic Background Mesh Gradients */}
       <div className="pointer-events-none absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#22994A]/10 dark:bg-[#22994A]/20 blur-[140px]" />
       <div className="pointer-events-none absolute -right-20 top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#1b7a3a]/10 dark:bg-[#1b7a3a]/15 blur-[120px]" />
       <div className="pointer-events-none absolute left-1/3 bottom-0 h-[300px] w-[300px] rounded-full bg-[#22994A]/5 dark:bg-[#22994A]/10 blur-[100px]" />
 
-      {/* Cyber Grid Lines Effect */}
+      {/* Cyber Grid Pattern */}
       <div 
-        className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
         style={{
-          backgroundImage: `linear-gradient(#22994A 1px, transparent 1px), linear-gradient(90px, #22994A 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(#22994A 1px, transparent 1px), linear-gradient(90deg, #22994A 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }}
       />
@@ -31,21 +30,21 @@ function MainPageSection1() {
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           
-          {/* Left Hero Section */}
+          {/* ================= LEFT HERO CONTENT ================= */}
           <div className="flex flex-col items-start lg:col-span-7">
             
-            {/* Glassmorphic Cyber Badge */}
-            <div className="group mb-8 inline-flex items-center gap-3 rounded-2xl border border-[#22994A]/30 bg-[#22994A]/10 px-4 py-2 backdrop-blur-xl transition-all hover:border-[#22994A]/60">
+            {/* Cyber Status Badge */}
+            <div className="group mb-8 inline-flex items-center gap-3 rounded-2xl border border-[#22994A]/30 bg-[#22994A]/10 px-4 py-2 backdrop-blur-xl transition-all hover:border-[#22994A]/60 shadow-[0_0_15px_rgba(34,153,74,0.15)]">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22994A] opacity-75" />
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-[#22994A]" />
               </span>
-              <span className="text-xs font-mono font-semibold tracking-widest text-[#22994A] uppercase">
+              <span className="text-xs font-mono font-semibold tracking-widest text-[#22994A] dark:text-[#32A55C] uppercase">
                 IT & Digital Solutions Partner
               </span>
             </div>
 
-            {/* Typography */}
+            {/* Title */}
             <h1 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-[72px] lg:leading-[1.05]">
               {t('mainPage.mainPageSection1.title1', 'WE DEVELOP')}{' '}
               <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#22994A] via-[#32A55C] to-[#1b7a3a] dark:to-[#80E2A3]">
@@ -67,7 +66,7 @@ function MainPageSection1() {
               </p>
             </div>
 
-            {/* Interactive Call To Action */}
+            {/* Interactive CTA Button */}
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <button
                 onClick={() => dispatch(setOrderService(true))}
@@ -79,31 +78,31 @@ function MainPageSection1() {
               </button>
             </div>
 
-            {/* Micro Highlights */}
+            {/* Feature Badges */}
             <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-gray-200 dark:border-white/10 pt-6 text-sm font-medium text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-2">
-                <CheckCircleOutlineIcon className="text-[#22994A]" fontSize="small" />
+                <CheckCircleOutlineIcon className="text-[#22994A] dark:text-[#32A55C]" fontSize="small" />
                 <span>Индивидуальный подход</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircleOutlineIcon className="text-[#22994A]" fontSize="small" />
+                <CheckCircleOutlineIcon className="text-[#22994A] dark:text-[#32A55C]" fontSize="small" />
                 <span>Современный стек</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Visual Card Section */}
+          {/* ================= RIGHT VISUAL CONTAINER ================= */}
           <div className="relative lg:col-span-5">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               
-              {/* Card Glow */}
-              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-tr from-[#22994A] to-transparent opacity-20 dark:opacity-40 blur-2xl transition duration-500" />
+              {/* Card Ambient Glow */}
+              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-tr from-[#22994A] to-transparent opacity-30 dark:opacity-50 blur-2xl transition duration-500" />
 
-              {/* Main Futuristic Card Container */}
+              {/* Glassmorphic Container */}
               <div className="relative overflow-hidden rounded-[28px] border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-[#121915]/80 p-3 backdrop-blur-2xl shadow-xl dark:shadow-2xl transition-colors duration-300">
                 
-                {/* Mock Code Header Bar */}
+                {/* Window Header */}
                 <div className="flex items-center justify-between rounded-t-2xl bg-gray-100 dark:bg-[#0A0F0D] px-4 py-3 border-b border-gray-200 dark:border-white/5">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-red-500/80" />
@@ -116,7 +115,7 @@ function MainPageSection1() {
                   </div>
                 </div>
 
-                {/* Main Visual Frame */}
+                {/* Card Visual Content */}
                 <div className="relative mt-3 h-[360px] sm:h-[420px] w-full overflow-hidden rounded-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80"
@@ -124,12 +123,12 @@ function MainPageSection1() {
                     className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105 opacity-90 dark:opacity-80 dark:mix-blend-luminosity dark:hover:mix-blend-normal"
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 dark:from-[#0A0F0D] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 dark:from-[#0A0F0D] via-transparent to-transparent" />
 
-                  {/* Floating Metric Badge */}
+                  {/* Top Badge */}
                   <div className="absolute top-4 left-4 rounded-xl border border-gray-200/60 dark:border-white/10 bg-white/80 dark:bg-[#0A0F0D]/80 p-3 backdrop-blur-md shadow-lg">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#22994A]/20 text-[#22994A]">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#22994A]/20 text-[#22994A] dark:text-[#32A55C]">
                         <RocketLaunchIcon fontSize="small" />
                       </div>
                       <div>
@@ -139,9 +138,9 @@ function MainPageSection1() {
                     </div>
                   </div>
 
-                  {/* Glassmorphic Floating Overlay Footer */}
+                  {/* Bottom Footer Overlay */}
                   <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-gray-200/60 dark:border-white/10 bg-white/85 dark:bg-[#0A0F0D]/80 p-4 backdrop-blur-xl shadow-md">
-                    <p className="text-xs font-mono font-bold uppercase tracking-widest text-[#22994A]">
+                    <p className="text-xs font-mono font-bold uppercase tracking-widest text-[#22994A] dark:text-[#32A55C]">
                       ООО "Vatan ICT"
                     </p>
                     <p className="mt-1 text-sm font-medium text-gray-800 dark:text-gray-200">

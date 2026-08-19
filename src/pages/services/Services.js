@@ -1,303 +1,239 @@
-import React, { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
-import icon_1_1 from '../../images/Group (2).png'
-import icon_2_1 from '../../images/Group (3).png'
-import icon_3_1 from '../../images/Group (4).png'
-import icon_4_1 from '../../images/Group (5).png'
-import icon_5_1 from '../../images/Group (6).png'
-import icon_1_2 from '../../images/Group (7).png'
-import icon_2_2 from '../../images/Group (8).png'
-import icon_3_2 from '../../images/Group (9).png'
-import icon_4_2 from '../../images/Group (10).png'
-import icon_5_2 from '../../images/Group (11).png'
-import icon_arrow_right from '../../images/Frame 2046.png'
-import { useTranslation } from 'react-i18next'
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
+
+import icon_1_1 from '../../images/Group (2).png';
+import icon_2_1 from '../../images/Group (3).png';
+import icon_3_1 from '../../images/Group (4).png';
+import icon_4_1 from '../../images/Group (5).png';
+import icon_5_1 from '../../images/Group (6).png';
+import  './services.css';
+import icon_1_2 from '../../images/Group (7).png';
+import icon_2_2 from '../../images/Group (8).png';
+import icon_3_2 from '../../images/Group (9).png';
+import icon_4_2 from '../../images/Group (10).png';
+import icon_5_2 from '../../images/Group (11).png';
+
+import icon_arrow_right from '../../images/Frame 2046.png';
 
 function Services() {
-    const [servicesState, setServicesState] = useState(0)
-    const {t} = useTranslation()
+  const [activeTab, setActiveTab] = useState(1);
+  const { t } = useTranslation();
+
+  const servicesData = [
+    { id: 1, icon1: icon_1_1, icon2: icon_1_2, key: 'card1' },
+    { id: 2, icon1: icon_2_1, icon2: icon_2_2, key: 'card2' },
+    { id: 3, icon1: icon_3_1, icon2: icon_3_2, key: 'card3' },
+    { id: 4, icon1: icon_4_1, icon2: icon_4_2, key: 'card4' },
+    { id: 5, icon1: icon_5_1, icon2: icon_5_2, key: 'card5' },
+  ];
+
+  const activeServiceData = servicesData.find((s) => s.id === activeTab);
 
   return (
-    <div className='w-full bg-[rgba(242,242,242,1)] 2xl:min-h-[80.8vh] mdMUI:pt-[192px] pt-[36px]'>
-        <Helmet>
-          <title>Vatan ICT</title>
-          <meta name="description" content="ИТ Консалтинг · Дизайн · Проектирование · Разработка · Интеграция" />
-        </Helmet>
-        <div className='bg-[rgba(242,242,242,1)] mx-auto max-w-[2100px]'>
-            <div className='w-full text-center mdMUI:text-[48px] text-[24px] leading-[58.5px] font-[600] mdMUI:mb-[56px] mb-[24px]    2xl:px-[100px] max-[1370px]:px-[6%] max-[1200px]:px-[4%] max-[1080px]:px-[16px] max-[1150px]:px-[3%] px-[9.17%] max-w-[1440px] mx-auto'>
-                <h1 className='text-[rgba(73,73,73,1)]'>{t('servise.title')}</h1>
-            </div>
-            <div className='mdMUI:block hidden'>
-                <div 
-                style={{background: 'linear-gradient(7.78deg, #0C642A 22.51%, #2F9F57 96.27%)'}}
-                className='text-white'
-                >
-                    <div className='lgMUI:min-h-[330px] min-h-[250px] grid mdMUI:grid-cols-5 font-[600] lgMUI:text-[20px] text-[16px] mdMUI:leading-[24.38px]'>
-                        {
-                            servicesState == 1 ?
-                            <div className='bg-white border-r-[2px] border-b-[2px] border-dashed border-[rgba(34,153,74,1)] flex flex-col justify-center items-center w-full h-full'>
-                                <div onClick={()=>setServicesState(0)} className='flex flex-col justify-center items-center text-white'>
-                                    {/* <img src={icon_1_1} alt='icon_1_1' className=''/> */}
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_1_2} alt='icon_1_2' className='' width='100%' height='100%'/>
-                                    </div>
-                                    <h2 className='mt-[24px] text-[rgba(34,153,74,1)]'>{t('servise.card1.title')}</h2>
-                                </div>
-                            </div>
-                                :
-                            <div className={`${servicesState != 2 ? 'border-r-[2px] border-dashed border-white' : ''} flex flex-col justify-center items-center w-full h-full`}>
-                                <div onClick={()=>setServicesState(1)} className='cursor-pointer flex flex-col justify-center items-center'>
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_1_1} alt='icon_1_1' className='' width='100%' height='100%'/>
-                                    </div>
-                                    {/* <img src={icon_1_2} alt='icon_1_2' className=''/> */}
-                                    <h2 className='mt-[24px]'>{t('servise.card1.title')}</h2>
-                                </div>
-                            </div>
-                        }
-                        {
-                            servicesState == 2 ?
-                            <div className='bg-white border-x-[2px] border-b-[2px] border-dashed border-[rgba(34,153,74,1)] flex flex-col justify-center items-center w-full h-full'>
-                                <div onClick={()=>setServicesState(0)} className='flex flex-col justify-center items-center text-white'>
-                                    {/* <img src={icon_2_1} alt='icon_2_1' className=''/> */}
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_2_2} alt='icon_2_2' className='' width='100%' height='100%'/>
-                                    </div>
-                                    <h2 className='mt-[24px] text-[rgba(34,153,74,1)]'>{t('servise.card2.title')}</h2>
-                                </div>
-                            </div>
-                                :
-                            <div className={`${servicesState != 3 ? 'border-r-[2px] border-dashed border-white' : ''} flex flex-col justify-center items-center w-full h-full`}>
-                                <div onClick={()=>setServicesState(2)} className='cursor-pointer flex flex-col justify-center items-center'>
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_2_1} alt='icon_2_1' className='' width='100%' height='100%'/>
-                                    </div>
-                                    {/* <img src={icon_2_2} alt='icon_2_2' className=''/> */}
-                                    <h2 className='mt-[24px]'>{t('servise.card2.title')}</h2>
-                                </div>
-                            </div>
-                        }
-                        {
-                            servicesState == 3 ?
-                            <div className='bg-white border-x-[2px] border-b-[2px] border-dashed border-[rgba(34,153,74,1)] flex flex-col justify-center items-center w-full h-full'>
-                                <div onClick={()=>setServicesState(0)} className='flex flex-col justify-center items-center text-white'>
-                                    {/* <img src={icon_3_1} alt='icon_3_1' className=''/> */}
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_3_2} alt='icon_3_2' className='' width='100%' height='100%'/>
-                                    </div>
-                                    <h2 className='mt-[24px] text-[rgba(34,153,74,1)]'>{t('servise.card3.title')}</h2>
-                                </div>
-                            </div>
-                                :
-                            <div className={`${servicesState !=4 ? 'border-r-[2px] border-dashed border-white' : ''} flex flex-col justify-center items-center w-full h-full`}>
-                                <div onClick={()=>setServicesState(3)} className='cursor-pointer flex flex-col justify-center items-center'>
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_3_1} alt='icon_3_1' className='' width='100%' height='100%'/>
-                                    </div>
-                                    {/* <img src={icon_3_2} alt='icon_3_2' className=''/> */}
-                                    <h2 className='mt-[24px]'>{t('servise.card3.title')}</h2>
-                                </div>
-                            </div>
-                        }
-                        {
-                            servicesState == 4 ?
-                            <div className='bg-white border-l-[2px] border-b-[2px] border-dashed border-[rgba(34,153,74,1)] flex flex-col justify-center items-center w-full h-full'>
-                                <div onClick={()=>setServicesState(0)} className='flex flex-col justify-center items-center text-white'>
-                                    {/* <img src={icon_4_1} alt='icon_4_1' className=''/> */}
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_4_2} alt='icon_4_2' className='' width='100%' height='100%'/>
-                                    </div>
-                                    <h2 className='mt-[24px] text-[rgba(34,153,74,1)]'>{t('servise.card4.title')}</h2>
-                                </div>
-                            </div>
-                                :
-                            <div className={`${servicesState != 3 || servicesState !=5 ? 'border-r-[2px] border-dashed border-white' : ''} flex flex-col justify-center items-center w-full h-full`}>
-                                <div onClick={()=>setServicesState(4)} className='cursor-pointer flex flex-col justify-center items-center'>
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_4_1} alt='icon_4_1' className='' width='100%' height='100%'/>
-                                    </div>
-                                    {/* <img src={icon_4_2} alt='icon_4_2' className=''/> */}
-                                    <h2 className='mt-[24px]'>{t('servise.card4.title')}</h2>
-                                </div>
-                            </div>
-                        }
-                        {
-                            servicesState == 5 ?
-                            <div className='bg-white border-b-[2px] border-dashed border-[rgba(34,153,74,1)] flex flex-col justify-center items-center w-full h-full'>
-                                <div onClick={()=>setServicesState(0)} className='flex flex-col justify-center items-center text-white'>
-                                    {/* <img src={icon_5_1} alt='icon_5_1' className=''/> */}
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_5_2} alt='icon_5_2' className='' width='100%' height='100%'/>
-                                    </div>
-                                    <h2 className='mt-[24px] text-[rgba(34,153,74,1)]'>{t('servise.card5.title')}</h2>
-                                </div>
-                            </div>
-                                :
-                            <div className='flex flex-col justify-center items-center w-full h-full'>
-                                <div onClick={()=>setServicesState(5)} className='cursor-pointer flex flex-col justify-center items-center'>
-                                    <div className='mdMUI:w-[71.24px] mdMUI:h-[71.24px]'>
-                                        <img src={icon_5_1} alt='icon_5_1' className='' width='100%' height='100%'/>
-                                    </div>
-                                    {/* <img src={icon_5_2} alt='icon_5_2' className=''/> */}
-                                    <h2 className='mt-[24px]'>{t('servise.card5.title')}</h2>
-                                </div>
-                            </div>
-                        }
+    // Никаких фиксированных высот – всё по содержимому
+    <div className="w-full bg-[#FAFAFB] dark:bg-[#0A0F0D] pt-[40px] mdMUI:pt-[60px] pb-[80px] transition-colors duration-300">
+      <Helmet>
+        <title>{t('servicesPage.title')} - Vatan ICT</title>
+        <meta name="description" content={t('servicesPage.description')} />
+      </Helmet>
+
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 w-full">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-10 mdMUI:mb-12"
+        >
+          <span className="inline-block py-1 px-3 rounded-full bg-[#22994A]/10 text-[#22994A] dark:bg-[#25b558]/20 dark:text-[#25b558] font-semibold text-xs mdMUI:text-sm tracking-wider uppercase mb-3">
+            {t('servicesPage.subtitle')}
+          </span>
+          <h1 className="text-3xl mdMUI:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+            {t('servicesPage.title')}
+          </h1>
+          <p className="text-slate-600 dark:text-gray-300 text-base mdMUI:text-lg leading-relaxed">
+            {t('servicesPage.description')}
+          </p>
+        </motion.div>
+
+        {/* Desktop View */}
+        <div className="hidden mdMUI:block">
+          {/* Navigation Tabs Header */}
+          <div className="bg-white dark:bg-[#131916] border border-slate-200/90 dark:border-gray-800 rounded-2xl shadow-sm overflow-hidden p-2.5">
+            <div className="grid grid-cols-5 gap-2">
+              {servicesData.map((item) => {
+                const isActive = activeTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveTab(item.id)}
+                    className={`relative flex flex-col items-center justify-center py-6 px-4 rounded-xl transition-all duration-300 outline-none ${
+                      isActive
+                        ? 'bg-[#F4F9F5] dark:bg-[#1A231F] text-[#22994A] dark:text-[#25b558] shadow-sm border border-[#22994A]/30 scale-[1.01]'
+                        : 'text-slate-600 dark:text-gray-400 hover:text-[#22994A] dark:hover:text-white hover:bg-slate-50 dark:hover:bg-gray-800/50'
+                    }`}
+                  >
+                    <div className="w-14 h-14 flex items-center justify-center mb-3">
+                      <img
+                        src={isActive ? item.icon2 : item.icon1}
+                        alt={t(`servicesPage.cards.${item.key}.title`)}
+                        style={{
+                          filter:
+                            'brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(452%) hue-rotate(94deg) brightness(95%) contrast(91%)',
+                        }}
+                        className="w-full h-full object-contain transition-transform duration-300"
+                      />
                     </div>
-                </div>
-                <div className={`${servicesState >= 1 && servicesState <=5 ? 'bg-white' : ''} 2xl:px-[130px] mdMUI:pb-[168px] pb-[72px] max-[1370px]:px-[6%] max-[1200px]:px-[4%] max-[1080px]:px-[16px] max-[1150px]:px-[3%] px-[9.17%] mx-auto`}>
-                    <div className='font-[500] mdMUI:text-[20px] text-[rgba(73,73,73,1)] mdMUI:pt-[64px] mdMUI:leading-[30.68px]'>
-                        {
-                            servicesState == 1 ? 
-                            <>
-                                <h3>{t('servise.card1.text1')}</h3>
-                                <h3 className='mdMUI:mt-[30.68px]'>{t('servise.card1.text2')}</h3>
-                            </>
-                            : 
-                            servicesState == 2 ?
-                            <>
-                                <h3>{t('servise.card2.text2')}.</h3>
-                                <h3 className='mdMUI:mt-[30.68px]'>{t('servise.card2.text2')}</h3>
-                            </>
-                            : 
-                            servicesState == 3 ?
-                            <>
-                                <h3>{t('servise.card3.text1')}</h3>
-                                <h3 className='mdMUI:mt-[30.68px]'>{t('servise.card3.text2')}</h3>
-                            </>
-                            : 
-                            servicesState == 4 ?
-                            <>
-                                <h3>{t('servise.card4.text1')}</h3>
-                                <h3 className='mdMUI:mt-[30.68px]'>{t('servise.card4.text2')}</h3>
-                            </>
-                            :
-                            servicesState == 5 ?
-                            <>
-                                <h3>{t('servise.card5.text1')}</h3>
-                                <h3 className='mdMUI:mt-[30.68px]'>{t('servise.card5.text2')}</h3>
-                            </>
-                            : 
-                            <></>
-                        }
-                    </div>
-                </div>
-            </div>
-            <div className='mdMUI:hidden block pb-[120px]'>
-                <div className='w-full'>
-                    <div 
-                    style={{ background:'linear-gradient(7.78deg, #0C642A 22.51%, #2F9F57 96.27%)'}}
-                    className='w-full min-h-[480px]'
+                    <span
+                      className={`text-base font-semibold text-center transition-colors ${
+                        isActive
+                          ? 'text-[#22994A] dark:text-[#25b558]'
+                          : 'text-slate-700 dark:text-gray-300'
+                      }`}
                     >
-                        <div onClick={()=> servicesState == 1 ? setServicesState(0) : setServicesState(1)} className={`${servicesState != 1 ? 'border-b-[2px]' : ''} border-dashed border-white h-[97px] p-[24px] flex items-center cursor-pointer`}>
-                            <img src={icon_1_1} alt='icon_1_1' width='48px' height='48px' className='mr-[8px]'/>
-                            <h1 className='text-white font-[600] text-[16px] leading-[19.5px] mr-[8px]'>ИТ-консалтинг</h1>
-                            {
-                                servicesState == 1 ?
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=' rotate-90'/>
-                                :
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=''/>
-                            }
-                        </div>
-                        {
-                            servicesState == 1 && 
-                            <div className='bg-white px-[16px] py-[24px] text-[14px] leading-[21.48px] font-[500]'>
-                                <h3>Современный бизнес не может функционировать отдельно от своих информационных активов или без применения информационных технологии. В определённом этапе развития компании возникает необходимость пересмотреть рабочие процессы, оптимизировать, автоматизировать и более шире применять цифровые технологии.</h3>
-                                <h3 className='mt-[21.48px]'>Ватан ИКТ предоставляет широкий спектр услуг ИТ-консалтинга - начиная от оптимизации бизнес процессов до оценки стоимости информационных активов.</h3>
-                            </div>
-                        }
-
-
-
-
-                        
-                        <div onClick={()=> servicesState == 2 ? setServicesState(0) : setServicesState(2)} className={`${servicesState != 2 ? 'border-b-[2px]' : ''} border-dashed border-white h-[97px] p-[24px] flex items-center cursor-pointer`}>
-                            <img src={icon_2_1} alt='icon_2_1' width='48px' height='48px' className='mr-[8px]'/>
-                            <h1 className='text-white font-[600] text-[16px] leading-[19.5px] mr-[8px]'>Дизайн</h1>
-                            {
-                                servicesState == 2 ?
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=' rotate-90'/>
-                                :
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=''/>
-                            }
-                        </div>
-                        {
-                            servicesState == 2 && 
-                            <div className='bg-white px-[16px] py-[24px] text-[14px] leading-[21.48px] font-[500]'>
-                                <h3>Дизайн пользовательского интерфейса стоит на одном ряду по важности с технической функциональностью приложения и вместе определяют степень успешности продукта на рынке. В условиях высокой конкуренции удачный дизайн является одним из залогов удержания пользователей.</h3>
-                                <h3 className='mt-[21.48px]'>За годы деятельности Ватан ИКТ накопил большой опыт по созданию интуитивно понятного дизайна пользовательских интерфейсов и предлагает услуги профессионального дизайна пользовательских интерфейсов, как в рамках комплексных проектов, так и по отдельности по запросу заказчиков.</h3>
-                            </div>
-                        }
-
-
-
-                        
-                        <div onClick={()=> servicesState == 3 ? setServicesState(0) : setServicesState(3)} className={`${servicesState != 3 ? 'border-b-[2px]' : ''} border-dashed border-white h-[97px] p-[24px] flex items-center cursor-pointer`}>
-                            <img src={icon_3_1} alt='icon_3_1' width='48px' height='48px' className='mr-[8px]'/>
-                            <h1 className='text-white font-[600] text-[16px] leading-[19.5px] mr-[8px]'>Проектирование</h1>
-                            {
-                                servicesState == 3 ?
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=' rotate-90'/>
-                                :
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=''/>
-                            }
-                        </div>
-                        {
-                            servicesState == 3 && 
-                            <div className='bg-white px-[16px] py-[24px] text-[14px] leading-[21.48px] font-[500]'>
-                                <h3>Важной частью при внедрении любой ИТ-системы, является проектирование - технический анализ, бизнес анализ, составление функциональных требовании, составление архитектуры, утверждение технического задания.</h3>
-                                <h3 className='mt-[21.48px]'>Ватан ИКТ имеет большой опыт в проектировании информационных систем разной степени сложности и предлагает на рынке услуги проектирования информационных систем и перехода на цифровизацию услуг организации.</h3>
-                            </div>
-                        }
-
-
-
-
-                        
-                        <div onClick={()=> servicesState == 4 ? setServicesState(0) : setServicesState(4)} className={`${servicesState != 4 ? 'border-b-[2px]' : ''} border-dashed border-white h-[97px] p-[24px] flex items-center cursor-pointer`}>
-                            <img src={icon_4_1} alt='icon_4_1' width='48px' height='48px' className='mr-[8px]'/>
-                            <h1 className='text-white font-[600] text-[16px] leading-[19.5px] mr-[8px]'>Разработка</h1>
-                            {
-                                servicesState == 4 ?
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=' rotate-90'/>
-                                :
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=''/>
-                            }
-                        </div>
-                        {
-                            servicesState == 4 && 
-                            <div className='bg-white px-[16px] py-[24px] text-[14px] leading-[21.48px] font-[500]'>
-                                <h3>Грамотная и своевременная реализация технического функционала приложения или более комплексных информационных систем в конечном итоге позволяет организациям сократить расходы на их техническое сопровождение и обновления.</h3>
-                                <h3 className='mt-[21.48px]'>Ватан ИКТ владея экспертизой разработки цифровых платформ, предлагает заинтересованным заказчикам свои услуги, которая позволит сократить время на разработку и быстро запустить цифровые услуги с помощью разработанного приложения.</h3>
-                            </div>
-                        }
-
-
-
-                        
-                        <div onClick={()=> servicesState == 5 ? setServicesState(0) : setServicesState(5)} className='h-[97px] p-[24px] flex items-center cursor-pointer'>
-                            <img src={icon_5_1} alt='icon_5_1' width='48px' height='48px' className='mr-[8px]'/>
-                            <h1 className='text-white font-[600] text-[16px] leading-[19.5px] mr-[8px]'>Интеграция</h1>
-                            {
-                                servicesState == 5 ?
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=' rotate-90'/>
-                                :
-                                <img src={icon_arrow_right} alt='icon_arrow_right' width='16px' height='16px' className=''/>
-                            }
-                        </div>
-                        {
-                            servicesState == 5 && 
-                            <div className='bg-white px-[16px] py-[24px] text-[14px] leading-[21.48px]  font-[500]'>
-                                <h3>В глобальной экосистеме технологии, приложение не может функционировать изолированно от других прикладных систем. Для полноценной и эффективной работы приложения необходима интеграция с внешними или внутренными информационными системами.</h3>
-                                <h3 className='mt-[21.48px]'>Практика Ватан ИКТ позволяет компании предоставлять услуги по интеграции приложении с любыми облачными платформами или внутренными информационными системами организации.</h3>
-                            </div>
-                        }
-                    </div>
-                </div>
+                      {t(`servicesPage.cards.${item.key}.title`)}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
+          </div>
+
+          {/* Active Tab Content Card */}
+          <div className="mt-6">
+            <AnimatePresence mode="wait">
+              {activeServiceData && (
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.35 }}
+                  className="bg-white dark:bg-[#131916] border border-slate-200/90 dark:border-gray-800 rounded-2xl p-6 lg:p-10 shadow-sm grid grid-cols-12 gap-8 items-start"
+                >
+                  {/* Текст */}
+                  <div className="col-span-12 lg:col-span-7 space-y-4 text-slate-700 dark:text-gray-200 text-base lg:text-lg leading-relaxed">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-gray-800 pb-3">
+                      {t(`servicesPage.cards.${activeServiceData.key}.title`)}
+                    </h3>
+                    <p>{t(`servicesPage.cards.${activeServiceData.key}.p1`)}</p>
+                    <p>{t(`servicesPage.cards.${activeServiceData.key}.p2`)}</p>
+                  </div>
+
+                  {/* Буллет-поинты */}
+                  <div className="col-span-12 lg:col-span-5 bg-[#F8FAFB] dark:bg-[#1A231F] border border-slate-200/70 dark:border-[#22994A]/20 rounded-xl p-5 lg:p-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#22994A] dark:text-[#25b558] mb-3">
+                      {t('servicesPage.whatIncludes')}
+                    </h4>
+                    <ul className="space-y-3">
+                      {[1, 2, 3].map((num) => (
+                        <li key={num} className="flex items-start">
+                          <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#22994A]/10 dark:bg-[#25b558]/20 text-[#22994A] dark:text-[#25b558] font-bold text-xs mr-3 shrink-0 mt-0.5">
+                            ✓
+                          </span>
+                          <span className="text-slate-800 dark:text-gray-200 text-sm lg:text-base font-medium">
+                            {t(
+                              `servicesPage.cards.${activeServiceData.key}.item${num}`
+                            )}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
+
+        {/* Mobile View (Accordion) */}
+        <div className="block mdMUI:hidden space-y-3">
+          {servicesData.map((item) => {
+            const isActive = activeTab === item.id;
+            return (
+              <div
+                key={item.id}
+                className="border border-slate-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm bg-white dark:bg-[#131916] transition-all"
+              >
+                <button
+                  onClick={() => setActiveTab(isActive ? 0 : item.id)}
+                  className={`w-full p-4 flex items-center justify-between text-left transition-colors ${
+                    isActive
+                      ? 'bg-[#F4F9F5] dark:bg-[#1A231F] text-slate-900 dark:text-white border-b border-slate-200 dark:border-gray-800'
+                      : 'hover:bg-slate-50/60 dark:hover:bg-gray-800/50 text-slate-900 dark:text-white'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src={isActive ? item.icon2 : item.icon1}
+                      alt={t(`servicesPage.cards.${item.key}.title`)}
+                      style={{
+                        filter:
+                          'brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(452%) hue-rotate(94deg) brightness(95%) contrast(91%)',
+                      }}
+                      className="w-8 h-8 object-contain"
+                    />
+                    <span
+                      className={`font-bold text-sm sm:text-base ${
+                        isActive ? 'text-[#22994A] dark:text-[#25b558]' : ''
+                      }`}
+                    >
+                      {t(`servicesPage.cards.${item.key}.title`)}
+                    </span>
+                  </div>
+                  <img
+                    src={icon_arrow_right}
+                    alt="arrow"
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isActive ? 'rotate-90 filter invert dark:invert-0' : 'dark:invert'
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-4 space-y-3 text-xs sm:text-sm text-slate-700 dark:text-gray-200 leading-relaxed">
+                        <p>{t(`servicesPage.cards.${item.key}.p1`)}</p>
+                        <p>{t(`servicesPage.cards.${item.key}.p2`)}</p>
+
+                        <div className="mt-3 pt-3 border-t border-slate-100 dark:border-gray-800/60 bg-[#F4F9F5] dark:bg-[#1A231F] -mx-4 -mb-4 p-4">
+                          <h5 className="text-xs font-bold uppercase tracking-wider text-[#22994A] dark:text-[#25b558] mb-2">
+                            {t('servicesPage.whatIncludes')}
+                          </h5>
+                          <ul className="space-y-2">
+                            {[1, 2, 3].map((num) => (
+                              <li
+                                key={num}
+                                className="flex items-start text-xs font-medium text-slate-800 dark:text-gray-200"
+                              >
+                                <span className="text-[#22994A] dark:text-[#25b558] font-bold mr-2">
+                                  ✓
+                                </span>
+                                {t(`servicesPage.cards.${item.key}.item${num}`)}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Services
+export default Services;

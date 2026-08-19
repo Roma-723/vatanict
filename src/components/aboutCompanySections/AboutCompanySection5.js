@@ -49,7 +49,7 @@ const EyeIcon = () => (
 )
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 35 },
   visible: {
     opacity: 1,
     y: 0,
@@ -67,16 +67,18 @@ const PdfCard = ({ item, onOpen }) => {
       onClick={onOpen}
       className="
         group relative cursor-pointer overflow-hidden
-        rounded-[24px] border border-[#E7E7E7] bg-white
-        shadow-sm transition-shadow duration-300
-        hover:border-[#22994A]/40 hover:shadow-[0_20px_45px_rgba(34,153,74,0.12)]
+        rounded-[24px] border border-[#E7E7E7] dark:border-gray-800
+        bg-white dark:bg-[#1E2320]
+        shadow-sm transition-all duration-300
+        hover:border-[#22994A]/40 dark:hover:border-[#22994A]/60
+        hover:shadow-[0_20px_45px_rgba(34,153,74,0.12)] dark:hover:shadow-[0_20px_45px_rgba(0,0,0,0.5)]
       "
     >
       {/* Number Badge */}
       <div
         className="
           absolute left-5 top-5 z-20 flex h-9 min-w-9
-          items-center justify-center rounded-full bg-white/90 px-3.5
+          items-center justify-center rounded-full bg-white/90 dark:bg-[#141816]/90 px-3.5
           text-xs font-bold text-[#22994A] shadow-md backdrop-blur-md
           transition-transform duration-300 group-hover:scale-105
         "
@@ -85,11 +87,11 @@ const PdfCard = ({ item, onOpen }) => {
       </div>
 
       {/* PDF Container */}
-      <div className="relative flex h-[360px] items-center justify-center overflow-hidden bg-[#F7F8F7] p-5">
+      <div className="relative flex h-[360px] items-center justify-center overflow-hidden bg-[#F7F8F7] dark:bg-[#141816] p-5 transition-colors duration-300">
         <div
           className="
-            relative h-full overflow-hidden rounded-xl bg-white
-            shadow-[0_8px_25px_rgba(0,0,0,0.08)]
+            relative h-full overflow-hidden rounded-xl bg-white dark:bg-gray-900
+            shadow-[0_8px_25px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_25px_rgba(0,0,0,0.3)]
             transition-transform duration-500 group-hover:scale-[1.03]
           "
         >
@@ -97,7 +99,7 @@ const PdfCard = ({ item, onOpen }) => {
             file={item.file}
             loading={
               <div className="flex h-[320px] w-[240px] items-center justify-center">
-                <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#E5E5E5] border-t-[#22994A]" />
+                <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 dark:border-gray-700 border-t-[#22994A]" />
               </div>
             }
           >
@@ -114,14 +116,14 @@ const PdfCard = ({ item, onOpen }) => {
         <div
           className="
             absolute inset-0 z-10 flex items-center justify-center
-            bg-[#22994A]/70 opacity-0 backdrop-blur-[4px]
+            bg-[#22994A]/70 dark:bg-[#22994A]/80 opacity-0 backdrop-blur-[4px]
             transition-all duration-300 group-hover:opacity-100
           "
         >
           <div
             className="
-              flex translate-y-4 items-center gap-2 rounded-full bg-white
-              px-6 py-3 text-sm font-semibold text-[#22994A] shadow-xl
+              flex translate-y-4 items-center gap-2 rounded-full bg-white dark:bg-gray-900
+              px-6 py-3 text-sm font-semibold text-[#22994A] dark:text-[#25b558] shadow-xl
               transition-all duration-300 group-hover:translate-y-0
             "
           >
@@ -134,22 +136,22 @@ const PdfCard = ({ item, onOpen }) => {
       {/* Content */}
       <div className="p-6">
         <div className="mb-2 flex items-center justify-between gap-3">
-          <h3 className="truncate text-lg font-bold text-[#2D2D2D] transition-colors group-hover:text-[#22994A]">
+          <h3 className="truncate text-lg font-bold text-[#2D2D2D] dark:text-gray-100 transition-colors group-hover:text-[#22994A] dark:group-hover:text-[#25b558]">
             {item.title}
           </h3>
 
           <div
             className="
               flex h-9 w-9 shrink-0 items-center justify-center
-              rounded-full bg-[#F1F8F3] text-[#22994A]
-              transition-all duration-300 group-hover:bg-[#22994A] group-hover:text-white
+              rounded-full bg-[#F1F8F3] dark:bg-[#141816] text-[#22994A] dark:text-[#25b558]
+              transition-all duration-300 group-hover:bg-[#22994A] group-hover:text-white dark:group-hover:bg-[#22994A] dark:group-hover:text-white
             "
           >
             <ArrowIcon />
           </div>
         </div>
 
-        <p className="text-sm font-medium text-gray-400">
+        <p className="text-sm font-medium text-gray-400 dark:text-gray-400">
           {item.description}
         </p>
       </div>
@@ -208,12 +210,12 @@ function AboutCompanySection5() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#F5F7F6] py-[70px] mdMUI:py-[100px]">
+    <section className="relative overflow-hidden bg-[#F5F7F6] dark:bg-[#0A0F0D] py-[70px] mdMUI:py-[100px] transition-colors duration-300">
       {/* Background Decorative Blob */}
       <div
         className="
           pointer-events-none absolute -right-[150px] -top-[150px]
-          h-[450px] w-[450px] rounded-full bg-[#22994A]/[0.05] blur-3xl
+          h-[450px] w-[450px] rounded-full bg-[#22994A]/[0.05] dark:bg-[#22994A]/[0.1] blur-3xl
         "
       />
 
@@ -237,16 +239,16 @@ function AboutCompanySection5() {
           <div className="max-w-[650px]">
             <div className="mb-4 flex items-center gap-3">
               <span className="h-[2px] w-10 bg-[#22994A]" />
-              <span className="text-sm font-semibold uppercase tracking-[3px] text-[#22994A]">
+              <span className="text-sm font-semibold uppercase tracking-[3px] text-[#22994A] dark:text-[#25b558]">
                 {t('aboutCompany.aboutCompanySection5.subtitle')}
               </span>
             </div>
 
-            <h2 className="text-[32px] font-bold leading-tight tracking-tight text-[#303030] mdMUI:text-[48px]">
+            <h2 className="text-[32px] font-bold leading-tight tracking-tight text-[#303030] dark:text-gray-100 mdMUI:text-[48px]">
               {t('aboutCompany.aboutCompanySection5.title')}
             </h2>
 
-            <p className="mt-5 max-w-[560px] text-[15px] leading-7 text-gray-500 mdMUI:text-base">
+            <p className="mt-5 max-w-[560px] text-[15px] leading-7 text-gray-500 dark:text-gray-300 mdMUI:text-base">
               {t('aboutCompany.aboutCompanySection5.description')}
             </p>
           </div>
@@ -254,17 +256,17 @@ function AboutCompanySection5() {
           {/* Counter */}
           <div className="flex items-center gap-4">
             <div>
-              <span className="block text-4xl font-bold text-[#22994A]">
+              <span className="block text-4xl font-bold text-[#22994A] dark:text-[#25b558]">
                 04
               </span>
-              <span className="text-xs font-medium uppercase tracking-wider text-gray-400">
+              <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500">
                 {t('aboutCompany.aboutCompanySection5.subtitle')}
               </span>
             </div>
 
-            <div className="h-12 w-px bg-gray-200" />
+            <div className="h-12 w-px bg-gray-200 dark:bg-gray-800" />
 
-            <p className="max-w-[130px] text-sm leading-5 text-gray-400">
+            <p className="max-w-[130px] text-sm leading-5 text-gray-400 dark:text-gray-400">
               {t('aboutCompany.aboutCompanySection5.badgeSubtitle')}
             </p>
           </div>

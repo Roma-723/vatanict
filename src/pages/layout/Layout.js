@@ -1,25 +1,32 @@
 import { Container } from '@mui/system'
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { Link, Navigate, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import './LayoutStyle.css'
 import logo_vatan_ict from '../../images/logo_vatan ict 1.png'
 import logo_light from '../../images/logo_light 1.png'
 import icon_menu from '../../images/fi_menu.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setApplyModel, setOrderService, setPdfModel } from '../../Redux/reducers/GlobalState'
-import { useLocation } from 'react-router-dom'
 import i18n from 'i18next'
-
 import { useTranslation } from 'react-i18next'
 import { pdfjs } from 'react-pdf'
 import Footer from '../../components/footer/Footer'
 import { setLanguage } from '../../Redux/reducers/LocallhostStateIct'
 import Order_service, { Apply_model, HeaderDrawerModal, PdfModal } from '../../components/modals/Modals'
 
-// Иконкаҳо барои Light / Dark mode
+// Иконкаҳо аз MUI
 import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import NightlightIcon from '@mui/icons-material/Nightlight'
 import { useTheme } from '../../context/ThemeContext'
+
+// Китобхонаи парчамҳо (SVG)
+import Flag from 'react-world-flags'
+
+const languages = [
+    { code: 'tj', label: 'Тоҷикӣ', shortLabel: 'TJ', countryCode: 'TJ' },
+    { code: 'ru', label: 'Русский', shortLabel: 'RU', countryCode: 'RU' },
+    { code: 'en', label: 'English', shortLabel: 'EN', countryCode: 'GB' },
+]
 
 function Layout() {
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -40,10 +47,12 @@ function Layout() {
     const language = useSelector(({ LocallhostStateIct }) => LocallhostStateIct.language)
 
     const [drawerMobile, setDrawerMobile] = useState(false);
+    const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang);
         dispatch(setLanguage(lang));
+        setIsLanguageOpen(false);
     };
 
     function onDocumentLoadSuccess({ numPages }) {
@@ -57,7 +66,7 @@ function Layout() {
     }, [])
 
     useEffect(() => {
-        document.location.href = '#up'
+        window.scrollTo(0, 0)
     }, [pathname])
 
     useEffect(() => {
@@ -68,11 +77,8 @@ function Layout() {
         }
     }, [order_service, apply_model, drawerMobile, pdfModel.open])
 
-    const languages = [
-        { code: 'tj', label: 'TJ' },
-        { code: 'ru', label: 'RU' },
-        { code: 'en', label: 'EN' },
-    ]
+    // Забони ҷорӣ
+    const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
 
     return (
         <div id='up' className='flex flex-col justify-between min-h-screen bg-white dark:bg-[#0A0F0D] text-gray-900 dark:text-white transition-colors duration-300'>
@@ -86,10 +92,10 @@ function Layout() {
                 <header className="w-full h-[72px] mdMUI:flex hidden items-center fixed top-0 left-0 z-20 bg-white/80 dark:bg-[#0A0F0D]/80 backdrop-blur-md transition-all duration-300 border-b border-gray-100 dark:border-white/10 shadow-sm">
                     <div className="2xl:px-[80px] xl:px-[5%] lg:px-[4%] px-[16px] items-center w-full justify-between max-w-[1920px] mx-auto flex gap-4">
 
-                        {/* Logo - вобаста ба тема иваз мешавад */}
+                        {/* Logo - Мутобиқ ба Dark / Light Mode */}
                         <Link to='/' className='max-w-[160px] xl:max-w-[180px] shrink-0 flex items-center'>
                             <img
-                                src={logo_vatan_ict}
+                                src={theme === 'dark' ? logo_vatan_ict : logo_vatan_ict}
                                 className='w-full h-8 sm:h-9 object-contain transition-all duration-300'
                                 alt="Vatan ICT Logo"
                             />
@@ -132,8 +138,6 @@ function Layout() {
                         </div>
 
                         {/* Right Section */}
-                        {/* Right Section */}
-                        {/* Right Section: Theme + Language + Contact Button */}
                         <div className='flex items-center gap-3 xl:gap-4 shrink-0'>
 
                             {/* Theme Switcher Button */}
@@ -149,20 +153,61 @@ function Layout() {
                                 )}
                             </button>
 
-                            {/* Languages Switcher */}
-                            <div className='flex items-center bg-gray-100 dark:bg-[#1E2320] p-1 rounded-full border border-gray-200 dark:border-[#22994A]/30 shadow-xs'>
-                                {languages.map((item) => (
-                                    <button
-                                        key={item.code}
-                                        onClick={() => changeLanguage(item.code)}
-                                        className={`px-3.5 py-1.5 text-[12px] font-bold rounded-full transition-all duration-300 cursor-pointer ${language === item.code
-                                                ? 'bg-[#22994A] text-white shadow-sm'
-                                                : 'text-gray-600 dark:text-gray-300 hover:text-[#22994A] dark:hover:text-white'
-                                            }`}
+                            {/* Language Select with SVG Flags */}
+                            <div className="relative">
+                                <button
+                                    onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                                    className="flex items-center gap-2 px-3.5 py-2 bg-gray-100 dark:bg-[#1E2320] border border-gray-200 dark:border-[#22994A]/30 rounded-full hover:border-[#22994A] transition-all duration-200 cursor-pointer"
+                                >
+                                    {/* Парчами SVG */}
+                                    <div className="w-5 h-3.5 overflow-hidden rounded-xs shadow-xs flex items-center justify-center">
+                                        <Flag code={currentLanguage.countryCode} className="w-full h-full object-cover" />
+                                    </div>
+                                    <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
+                                        {currentLanguage.shortLabel}
+                                    </span>
+                                    <svg 
+                                        className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        viewBox="0 0 24 24"
                                     >
-                                        {item.label}
-                                    </button>
-                                ))}
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+
+                                {/* Dropdown Menu */}
+                                {isLanguageOpen && (
+                                    <>
+                                        <div 
+                                            className="fixed inset-0 z-10" 
+                                            onClick={() => setIsLanguageOpen(false)}
+                                        />
+                                        <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-[#1E2320] border border-gray-200 dark:border-[#22994A]/30 rounded-lg shadow-lg z-20 py-1">
+                                            {languages.map((item) => (
+                                                <button
+                                                    key={item.code}
+                                                    onClick={() => changeLanguage(item.code)}
+                                                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-all duration-200 hover:bg-gray-50 dark:hover:bg-[#2A2F2C] ${
+                                                        language === item.code 
+                                                            ? 'bg-[#F0FDF4] dark:bg-[#22994A]/20 text-[#22994A] font-bold' 
+                                                            : 'text-gray-700 dark:text-gray-300'
+                                                    }`}
+                                                >
+                                                    <div className="w-5 h-3.5 overflow-hidden rounded-xs shadow-xs flex items-center justify-center">
+                                                        <Flag code={item.countryCode} className="w-full h-full object-cover" />
+                                                    </div>
+                                                    <span>{item.label}</span>
+                                                    {language === item.code && (
+                                                        <svg className="w-4 h-4 ml-auto text-[#22994A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    )}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
                             </div>
 
                             {/* Contacts Button */}
@@ -188,12 +233,67 @@ function Layout() {
                         <div>
                             <img src={logo_light} onClick={() => navigate('/')} width='145px' className='cursor-pointer' alt="Vatan ICT" />
                         </div>
-                        <button
-                            onClick={toggleTheme}
-                            className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-yellow-400"
-                        >
-                            {theme === 'dark' ? <WbSunnyIcon fontSize="small" /> : <NightlightIcon fontSize="small" />}
-                        </button>
+                        <div className="flex items-center gap-2">
+                            {/* Mobile Language Select with SVG */}
+                            <div className="relative">
+                                <button
+                                    onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-white"
+                                >
+                                    <div className="w-4 h-3 overflow-hidden rounded-xs flex items-center justify-center">
+                                        <Flag code={currentLanguage.countryCode} className="w-full h-full object-cover" />
+                                    </div>
+                                    <span className="text-xs font-bold">{currentLanguage.shortLabel}</span>
+                                    <svg 
+                                        className={`w-3 h-3 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+
+                                {isLanguageOpen && (
+                                    <>
+                                        <div 
+                                            className="fixed inset-0 z-10" 
+                                            onClick={() => setIsLanguageOpen(false)}
+                                        />
+                                        <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-[#1E2320] border border-gray-200 dark:border-[#22994A]/30 rounded-lg shadow-lg z-20 py-1">
+                                            {languages.map((item) => (
+                                                <button
+                                                    key={item.code}
+                                                    onClick={() => changeLanguage(item.code)}
+                                                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-all duration-200 hover:bg-gray-50 dark:hover:bg-[#2A2F2C] ${
+                                                        language === item.code 
+                                                            ? 'bg-[#F0FDF4] dark:bg-[#22994A]/20 text-[#22994A] font-bold' 
+                                                            : 'text-gray-700 dark:text-gray-300'
+                                                    }`}
+                                                >
+                                                    <div className="w-5 h-3.5 overflow-hidden rounded-xs flex items-center justify-center">
+                                                        <Flag code={item.countryCode} className="w-full h-full object-cover" />
+                                                    </div>
+                                                    <span>{item.label}</span>
+                                                    {language === item.code && (
+                                                        <svg className="w-4 h-4 ml-auto text-[#22994A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    )}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                            
+                            <button
+                                onClick={toggleTheme}
+                                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-yellow-400"
+                            >
+                                {theme === 'dark' ? <WbSunnyIcon fontSize="small" /> : <NightlightIcon fontSize="small" />}
+                            </button>
+                        </div>
                     </div>
                 </header>
 
